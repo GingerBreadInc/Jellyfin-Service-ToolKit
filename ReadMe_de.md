@@ -36,7 +36,7 @@ Screenshots
 
 Um das Toolkit nutzen zu können, gibt es keine speziellen Vorraussetzungen, außer die folgenden:
 
-#### Betriebssystem
+### Betriebssystem
 
 getestet wurde unter:
 
@@ -50,7 +50,7 @@ Windows Server 2022
 
 sollte aber unter jedem Windows mit PowerShell 5.1 laufen.
 
-#### Software
+### Software
 
 Mal abgeshen von Jellyfin selbst, gibt es keine speziell zu installierende Software.
 
@@ -76,7 +76,7 @@ Das Verzeichnis ist aus dem folgenden Beispiel entnommen: "Installation Jellyfin
 
 
 
-#### Windows UAC / Administrative Rechte
+### Windows UAC / Administrative Rechte
 
 Das gesamte Toolkit ist so aufgebaut, das keine administrativen Rechte nötig sind, mit zwei Ausnahmen:
 
@@ -93,7 +93,7 @@ Wem es nicht behagt aus dem Internet herunter geladenen EXE-Dateien auszuführen
 
 
 
-#### Service Account
+### Service Account
 
 Ein großes Rätsel ist immer wieder, wie bekommt man den Jellyfin-Dienst dazu auf ein NAS zuzugreifen und auch wirklich lesen und schreiben zu drüfen?
 
