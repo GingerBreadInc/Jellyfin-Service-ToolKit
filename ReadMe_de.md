@@ -1,5 +1,7 @@
 # Jellyfin Service Toolkit
 
+![](https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-ToolKit/main/images/Overview.png)
+
 Ursprünglich war der Gedanke, meiner Jellyfin Installation, ein Windows System Tray Icon zu spendieren, um den Dienst selbiger steuern zu können.
 
 Und wie es manchmal so ist, kommt eins zum anderen. Die Logs liesen sich immer nur schwer lesen, also baute ich dazu noch ein kleines Tool, welches die Logs farbig darstellen konnte und so Fehler und Warnungen auf einen Blick ersichtlich sind. Aus dem kleinen Logviewer wurde dann die "Console", mit der ich auch gleich den Dienst starten und stoppen konnte. Aber halt, wenn man schon mal dabei ist, kann man ja auch gleich noch ein paar nützliche Informationen einbauen. Und schon gab es den "Statistics" Button, klickt man auf ihn, öffnet sich ein kleines Panel mit Informationen rund um die Jellyfin Installation. Bestehend aus, Version, Dienst Status, CPU/RAM Benutzung, Größe des Data Verzeichnises und die Größen der einzelnen Bibliotheken (Filme, Serien, Music, usw.).
