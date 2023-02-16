@@ -409,7 +409,7 @@ Das Toolkit besteht aus den Komponenten "SysTray", "Console", "Updater" und "Kon
 
 Die Komponente die alles ins Rollen brachte.
 
-Wie der Name schon sagt, lässt sich der Dienst damit über den SysTray von Windows steueren, aber das Icon kann auch ein klein wenig mehr.
+Wie der Name schon sagt, lässt sich der Dienst damit über den SysTray von Windows steuern, aber das Icon kann auch ein klein wenig mehr.
 
 hier der Aufbau (von oben nach unten)
 
@@ -435,7 +435,55 @@ Als weiteres Feature verfügt SysTray auch über "Ballootips". Diese erscheinen,
 
 ### Console
 
-Die Console dient als eine Art kleines Informationszentrum. Primär zeigt sie das Logfile in Echtzeit und stellt die einzelen Warnstufen in verschiedenen Farben dar, damit wird es übersichtlicher und man hat alles schnell im Blick.
+Die Console dient als eine Art kleines Informationszentrum. Primär zeigt sie das Logfile in Echtzeit und stellt die einzelen Warnstufen in verschiedenen Farben dar, damit wird es übersichtlicher und man hat alles schnell im Blick. Zudem gibt es ein "Statistik" Panel, in diesem werden der Status des Dienstes, der Ressourcenverbrauch und die Größe der jeweiligen Bibliotheken angezeigt. Darüberhinaus lässt sich der Dienst starten und stoppen.
+
+##### Das Menü
+
+1. Console
+   
+   Neu Laden - Lädt den Inhalt des Logfiles nochenma neu
+   
+   Web Client - öffnet den WebClient im Browser
+   
+   Konfigurator - startet den Konfigurator
+   
+   Update Verfügbar - sollte im konfigurator "Auf Updates prüfen" aktiviert und ein neues Update verfügbar sein, wird dieser Menüpunkt eingeblendet, darüber kann direkt der Updater gestartet werden
+   
+   Beenden - Beendet die Konsole
+
+2. Media Player - sollte im Konfigurator der Client Pfad angegeben worden sein, kann der Media Client darüber gestartet werden
+
+3. Dienst
+   
+   Dienst Starten - Startet den Dienst, sofern installiert und noch nicht gestartet
+   
+   Dienst Neustarten - Startet den Dienst neu, sofern installiert und nicht gestoppt
+   
+   Dienst Stoppen - Stoppt den Dienst, sofern installiert und nicht gestoppt
+
+4. Sprache - Hier kann die Sprache direkt gewechselt werden und wirkt sich auf alle Komponenten des Toolkit sofort aus
+
+5. Info
+   
+   Über - Hier wird die Version des Toolkit und der Jellyfin installation angezeigt
+
+##### Der Statistik Button
+
+Wir dieser aktiviert, öffnet sich ein Panel mit Informationen, rund um den Dienst und die Bibliotheken.
+
+Service
+
+Status - Status des Dienstes
+
+CPU Nutzung - CPU Verbrauch des Dienstes
+
+RAM Nutzung - RAM Verbrauch des Dienstes
+
+Data Verzeichnis - Größe des Data Verzeichnises
+
+Bibliothek
+
+Hier werden die einzelnen Bibliotheken und deren Größe angezeigt. Damit das richtig funktioniert, muss der Benutzer, welcher die Konsole gestartet hat, auch über Leseberechtigungen auf den Median Verzeichnisen besitzen.
 
 ## Screenshot
 
