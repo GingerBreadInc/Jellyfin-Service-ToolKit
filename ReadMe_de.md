@@ -48,7 +48,7 @@ Windows Server 2019,
 
 Windows Server 2022
 
-sollte aber unter jedem Windows mit PowerShell 5.1 laufen.
+sollte aber unter jedem Windows (x64) mit PowerShell 5.1 laufen.
 
 ### Software
 
@@ -157,7 +157,7 @@ Die einfachste Variante den Jellyfin Server zu installieren erkläre ich in den 
    C:\Jellyfin\ToolKit
    ```
 
-6. Im Verzeichnis Admin nun die "Jellyfin.Config.exe" starten
+6. Im Verzeichnis "ToolKit" nun die "Jellyfin.Config.exe" starten
    
    Nach erfolgtem Start, musst du die folgenden Punkte zwingend ausfüllen:
    
@@ -193,7 +193,7 @@ Die einfachste Variante den Jellyfin Server zu installieren erkläre ich in den 
    
    
 
-*Der Vorteil dieser Installationsvariante ist, man kann das Verzeichnis "C:\Jellyfin", jederzeit verschieben oder umbenennen. Einzige Vorraussetzung ist, man deinstalliert den Dienst vorher, was aber über den Konfigurator problemlos, schnell und ohne Datenverlust möglich ist und beendet alle Toolkitkomponentent (SysTray, Console, Configurator, Updater). Nach dem Verschieben oder umbenennen, geht man einfach wie in Punkt 5 vor, allerdings braucht man den Konfigurationassistenten nicht noch einmal durchlaufen, sollte dieser bereits vorher einmal ausgeführt worden sein.*
+*Der Vorteil dieser Installationsvariante ist, man kann das Verzeichnis "C:\Jellyfin", jederzeit verschieben oder umbenennen. Einzige Vorraussetzung ist, man deinstalliert den Dienst vorher, was aber über den Konfigurator problemlos, schnell und ohne Datenverlust möglich ist und beendet alle Toolkitkomponentent (SysTray, Console, Configurator, Updater). Nach dem Verschieben oder Umbenennen, geht man einfach wie in Punkt 5 vor, die Datenbankeinträge und Konfigurationsdateien, mit Verweis auf das bisherige Data Verzeichnis, werden ebenfalls automatisch migriert.*
 
 
 
@@ -203,11 +203,135 @@ Das Update ist recht einfach, es gibt hier drei Möglichkeiten:
 
 1. Möglichkeit: Du gehst wie oben im "Installation Jellyfin Server" - Punkt 1 und 3 vor und ersetzt das aktuelle Server Verzeichnis.
 
-2. Möglichkeit: Du startest im "C:\Jellyfin\Admin" Verzeichnis die "Jellyfin.Update.exe" und klickst auf "Update installieren", wenn eine neue Version verfügbar ist.
+2. Möglichkeit: Du startest im "C:\Jellyfin\ToolKit" Verzeichnis die "Jellyfin.Update.exe" und klickst auf "Update installieren", wenn eine neue Version verfügbar ist.
 
 3. Möglichkeit: Du aktivierst im "Konfigurator" einfach "auf Updates prüfen". So kannst du dann direkt über das SysTray Menü den Updater starten, sobald eine neue Version vorliegt.
    
    
+
+## Migration eines bestehenden Jellyfin Servers
+
+Wenn bereits der Jellyfin Server installiert wurde, kann er in wenigen Schritten, in die von mir empfohlene Variante, migriert werden.
+
+1. Ausfindig machen des Data Verzeichnisses.
+   
+   Der Standardpfad, wenn nicht bei der Installation anders ausgewählt, ist "C:\ProgramData\Jellyfin\Server".
+
+2. Anlegen eines Verzeichnisses, in dem am Ende, das ***Server***, das ***Data*** und das ***Toolkit*** Verzeichnis liegen
+   
+   zum Beispiel:
+   
+   ```powershell
+   C:\Jellyfin
+   ```
+
+3. Jellyfin beenden.
+   
+   Sollte bereits der Dienst verwendet werden, muss dieser entfernt werden.
+   
+   Das geht recht einfach:
+   
+   1. Dienst stoppen:
+      
+      1. Mit rechter Maustaste auf den Windows-Start-Button Klicken
+      
+      2. Computerverwaltung auswählen
+      
+      3. auf der Linken Seite "Dienste und Anwendungen" aufklappen und "Dienste" auswählen
+      
+      4. Den Jellyfin Dienst suchen und stoppen
+      
+      5. den Dienst anklicken und mittels rechter Maustaste die Eigenschaften öffnen
+      
+      6. Den Dienstnamen kopieren (z.b: "JellyfinServer")
+   
+   2. Powershell als Administrator starten
+   
+   3. In das aktuelle Jellyfin Server verzeichnis navigieren, z.b:
+      
+      ```powershell
+      cd "C:\Program Files\Jellyfin\Server"
+      ```
+   
+   4. anschließend den folgenden Befehl ausführen
+      
+      ```powershell
+      .\nssm.exe remove "JellyfinServer" confirm
+      ```
+   
+   5. Damit ist der Dienst deinstalliert.
+
+4. In unserem neuen Jellyfin Verzeichnis legen wir gleich noch das ***Data*** Verzeichnis an, in welches wir den gesamten Inhalt des in Punkt 1 gefundenen Verzeichnisses kopieren.
+
+5. Download der Jellyfin Server Dateien
+   
+   Um das Toolkit vernüftig zu nutzen, empfehle ich das Combined Package, das gibts hier im Jellyfin Repo: [https://repo.jellyfin.org/releases/server/windows/versions/stable/combined](https://repo.jellyfin.org/releases/server/windows/versions/stable/combined/)
+
+6. Den Inhalt (ein Verzsichnis), des heruntergeladenen Archivs, in das gerade erstellte Verzeichnis entpacken und in ***Server*** umbenennen.
+
+7. Das Toolkit von hier aus den Releases herunterladen und wieder den Inhalt in unser neu erstelltes Verzeichnis entpacken.
+   
+   Jetzt müsste es darin so aussehen:
+   
+   ```powershell
+   C:\Jellyfin\Data
+   C:\Jellyfin\Server
+   C:\Jellyfin\ToolKit
+   ```
+
+8. Im Verzeichnis "ToolKit" nun die "Jellyfin.Config.exe" starten
+   
+   Nach erfolgtem Start, musst du die folgenden Punkte zwingend ausfüllen:
+   
+   ***Im Bereich Basics***
+   
+   Data Verzeichnis: hier z.b. "C:\Jellyfin\Data" auswählen
+   
+   Server Verzeichnis: hier z.b. "C:\Jellyfin\Server" auswählen
+   
+   ***Im Bereich Service***
+   
+   Hier hast du die Auswahl zwischen "Lokalem Dienstkonto" oder einem eigenen Dienstkonto.
+   
+   Da die meisten ihre Mediadaten, wie Filme und Musik auf einem FileShare (z.b. NAS) liegen haben, muss hier ein Benutzer mit Lese- und Schreibrechten (wenn Jellyfin Cover und Co. auf dem NAS speichern soll) eingetragen werden.
+   
+   Unterstützt werden hier lokale Konten, aber auch ActiveDirectory-Konten.
+   
+   Solltest du dich für ein eigenes Dienst Konto entscheiden, trage die Kontodaten ein und klicke auf Account überprüfen. (Vorraussetzung für das Dienstkonto siehe oben)
+   
+   Sollte alles richtig sein, kannst du nun auf "Speichern klicken."
+   
+   Jetzt fehlt nur noch der klick auf den grünen Button "Installieren".
+   
+   *Es erscheint die UAC für einen Powershell Prozess, das ist in Ordnung, denn für das Installieren des Dienstes sind Admin Rechte erforderlich.*
+   
+   
+   
+   Es erfolgt eine automatische Migration der Datenbank und Konfigurationsdateien. Dabei werden im Vorfeld jeweils Backup-Kopien der Dateien und der Datenbank erstellt.
+   
+   
+   
+   *Zu beachten ist, das die folgenden Einstellung automatisch gesetzt werden:*
+   
+   Der "Metadata" Pfad wird gesetzt auf: C:\Jellyfin\Data\metadata
+   
+   Der "Cache" Pfad wird gesetzt auf: C:\Jellyfin\Data\cache
+   
+   "ffmpeg" wird gesetzt auf: C:\Jellyfin\Server\ffmpeg.exe
+   
+   Der "Transcode" Pfad wird gesetzt auf: C:\Jellyfin\Data\transcodes
+   
+   Sollten andere Pfade verwendet worden sein, können dies in der Jellyfin Web Oberfläche wieder angepasst werden.
+
+9. Den Media- oder Web Client öffnen und überprüfen ob noch alles wie gewünscht funktioniert.
+
+10. Sollte alles wie gehabt funktionieren, kann nun der ursprüngliche Jellyfin Server Deinstalliert werden.
+
+11. Damit ist die Migration abgeschlossen. 
+
+Sollten Probleme mit dem Zugriff der Bibliotheken auf Ihre Medien Verzeichnisse (NAS) auftreten, überprüfe noch einmal die Berechtigungen, des Dienst Kontos.
+
+
 
 ## Sprachen
 
@@ -217,7 +341,7 @@ Die Erweiterung ist ebenfalls recht einfach, dazu muss lediglich die Datei "Lang
 
 Und das geht so:
 
-1. Die Datei "C:\Jellyfin\Admin\Core\Languages.ps1" in einem passenden Editor (z.b. Notepad++) öffen
+1. Die Datei "C:\Jellyfin\ToolKit\Core\Languages.ps1" in einem passenden Editor (z.b. Notepad++) öffen
 
 2. einen bereits vorhandenen Sprachblock kopieren und am Ende einsetzen
 
@@ -250,26 +374,28 @@ Und das geht so:
 5. Datei speichern, die Änderungen werden sofort wirksam.
 
 6. Die Sprache kann direkt im "Konfigurator" oder in der "Console" gesetzt werden und werden dann auch gleich auf alle Komponenten des Toolkits angewendet.
-   
-   Noch ein Hinweis zu den Icons, diese befinden sich unter "C:\Jellyfin\Admin\Icons\Languages".
-   
-   Einige der gängigen Sprach-Icons habe ich breits abgelegt, sollten noch weitere benötigt werden, können diese hier herunter geladen werden:
-   
-   [https://iconarchive.com/show/flag-icons-by-gosquared.1.html](https://iconarchive.com/show/flag-icons-by-gosquared.1.html)
-   
-   Wichtig für den Download:
-   
-   1. Auf die entsprechende Flagge klicken
-   
-   2. "All Download Formats" auswählen
-   
-   3. Auf "Windows: Download ICO" klicken
-   
-   4. Das heruntergeladene Icon umbennen, z.b. für deutsch in "de-DE.ico"
-   
-   5. Icon im oben genannten Ordner ablegen
-      
-      Die Icons werden dann ebenfalls automatisch zum enstprechenden Eintrag in den jewiligen Sprach-Auswahlmenüs angezeigt, falls nicht "Console"" oder "Konfigurator"" einfach neustarten.
+
+**Language Icons**
+
+Diese befinden sich unter "C:\Jellyfin\ToolKit\Icons\Languages".
+
+Einige der gängigen Sprach-Icons habe ich breits abgelegt, sollten noch weitere benötigt werden, können diese hier herunter geladen werden:
+
+[https://iconarchive.com/show/flag-icons-by-gosquared.1.html](https://iconarchive.com/show/flag-icons-by-gosquared.1.html)
+
+Wichtig für den Download:
+
+1. Auf die entsprechende Flagge klicken
+
+2. "All Download Formats" auswählen
+
+3. Auf "Windows: Download ICO" klicken
+
+4. Das heruntergeladene Icon umbennen, z.b. für deutsch in "de-DE.ico"
+
+5. Icon im oben genannten Ordner ablegen
+
+Die Icons werden dann ebenfalls automatisch zum enstprechenden Eintrag in den jewiligen Sprach-Auswahlmenüs angezeigt, falls nicht, "Console" oder "Konfigurator" einfach neustarten. 
 
 
 
