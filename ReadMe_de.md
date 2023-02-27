@@ -42,6 +42,8 @@ So genug der vielen Worte, nun zum Eigentlichen. ;-)
 
 [Screenshots](#Screenshots)
 
+[Disclaimer](#Disclaimer)
+
 ## Vorrausetzungen - Toolkit
 
 Um das Toolkit nutzen zu können, gibt es keine speziellen Vorraussetzungen, außer die folgenden:
@@ -574,3 +576,9 @@ Hier findest du noch ein paar weitere Screenshots.
 ### Konfigurator
 
 ![ ](https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-ToolKit/main/images/Configurator.png)
+
+## Disclaimer
+
+Auch wenn nichts zu befürchten ist, da das Toolkit unter verschiedenen Bedingungen mehrfach getestet wurde:
+
+Es wird keine Haftung für jedweder Art von Schäden Übernommen, ob seelig, körperlich oder materiell. Das Ausführen des Toolkits erfolgt auf eigene Gefahr.
