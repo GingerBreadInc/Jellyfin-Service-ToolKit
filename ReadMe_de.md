@@ -18,8 +18,6 @@ Da das ganze ein reines Freizeit-Projekt ist, stelle ich das Toolkit, so wie es 
 
 So genug der vielen Worte, nun zum Eigentlichen. ;-)
 
-
-
 ## Inhalt
 
 Vorrausetzung Toolkit
@@ -76,8 +74,6 @@ Get-ChildItem -LiteralPath "C:\Jellyfin\ToolKit" -Recurse | Unblock-File -Confir
 
 Das Verzeichnis ist aus dem folgenden Beispiel entnommen: "Installation Jellyfin Server - Punkt 5"
 
-
-
 ### Windows UAC / Administrative Rechte
 
 Das gesamte Toolkit ist so aufgebaut, das keine administrativen Rechte nötig sind, mit zwei Ausnahmen:
@@ -88,12 +84,8 @@ Das gesamte Toolkit ist so aufgebaut, das keine administrativen Rechte nötig si
 
 Alles andere, wie zum Beispiel das Starten und Stoppen des Dienstes, funktioniert im jeweiligen Userkontext (des Benutzers, welcher den Dienst Installiert hat), da der "Konfigurator" die benötigten Rechte direkt auf den Dienst setzt.
 
-
-
 *Noch eine Anmerkung zu den EXE-Dateien:
 Wem es nicht behagt aus dem Internet herunter geladenen EXE-Dateien auszuführen, was ich gut verstehen kann, der kann alternativ auch die RunXXXX.ps1 und die dazugehörigen RunXXXX.cmd Dateien aus diesem Repository verwenden, der Inhalt ist der gleiche, allerdings laufen sie unter dem PowerShell Prozess und nicht unter Ihrem jeweilig eigenen.*
-
-
 
 ### Service Account
 
@@ -124,8 +116,6 @@ Für Heimanwender ist ein lokaler Windows Benutzer allerdings die einzige Mögli
    *Hier ist wichtig zu erwähnen, das dieser Benutzer ***nicht*** in die Gruppe "Lokale Administratoren" oder eine andere Gruppe aufgenommen werden muss, um die richtigen einzelnen Berechtigungen kümmert sich auch hier der "Konfigurator".* 
 
 4. Dieser Benutzer wird dann im "Konfigurator" angegeben.
-
-
 
 Ich habe recht oft gelesen, man solle doch das Lokale System Konto benutzen und auf dem NAS das Computerobject berechtigen. Prinzipiell mag das funktionieren, aber aus Sicherheitsgründen würde ich davon Abstand nehmen, genau wie einem Dienstkonto-Benutzer Administrator-Rechte zu verleihen. Man lässt ja auch nicht alle Türen und Fenster offen stehen, nur damit der Briefträger die Post im Urlaub auf den Esszimmertisch legen kann. ;-)
 
@@ -192,12 +182,8 @@ Die einfachste Variante den Jellyfin Server zu installieren erkläre ich in den 
 7. Fertig, das wars schon.
    
    Optional kannst du im Konfigurator noch angeben, ob automatisch nach Updates gesucht werden soll, ob das SysTray Icon automatisch bei jedem Anmelden gestartet werden soll und den Pfad für den installierten Jellyfin Client, dazu aber mehr weiter unten.
-   
-   
 
 *Der Vorteil dieser Installationsvariante ist, man kann das Verzeichnis "C:\Jellyfin", jederzeit verschieben oder umbenennen. Einzige Vorraussetzung ist, man deinstalliert den Dienst vorher, was aber über den Konfigurator problemlos, schnell und ohne Datenverlust möglich ist und beendet alle Toolkitkomponentent (SysTray, Console, Configurator, Updater). Nach dem Verschieben oder Umbenennen, geht man einfach wie in Punkt 5 vor, die Datenbankeinträge und Konfigurationsdateien, mit Verweis auf das bisherige Data Verzeichnis, werden ebenfalls automatisch migriert.*
-
-
 
 ## Update Jellyfin Server
 
@@ -208,8 +194,6 @@ Das Update ist recht einfach, es gibt hier drei Möglichkeiten:
 2. Möglichkeit: Du startest im "C:\Jellyfin\ToolKit" Verzeichnis die "Jellyfin.Update.exe" und klickst auf "Update installieren", wenn eine neue Version verfügbar ist.
 
 3. Möglichkeit: Du aktivierst im "Konfigurator" einfach "auf Updates prüfen". So kannst du dann direkt über das SysTray Menü den Updater starten, sobald eine neue Version vorliegt.
-   
-   
 
 ## Migration eines bestehenden Jellyfin Servers
 
@@ -306,23 +290,19 @@ Wenn bereits der Jellyfin Server installiert wurde, kann er in wenigen Schritten
    Jetzt fehlt nur noch der klick auf den grünen Button "Installieren".
    
    *Es erscheint die UAC für einen Powershell Prozess, das ist in Ordnung, denn für das Installieren des Dienstes sind Admin Rechte erforderlich.*
-   
-   
-   
+
    Es erfolgt eine automatische Migration der Datenbank und Konfigurationsdateien. Dabei werden im Vorfeld jeweils Backup-Kopien der Dateien und der Datenbank erstellt.
-   
-   
-   
+
    *Zu beachten ist, das die folgenden Einstellung automatisch gesetzt werden:*
-   
+
    Der "Metadata" Pfad wird gesetzt auf: C:\Jellyfin\Data\metadata
-   
+
    Der "Cache" Pfad wird gesetzt auf: C:\Jellyfin\Data\cache
-   
+
    "ffmpeg" wird gesetzt auf: C:\Jellyfin\Server\ffmpeg.exe
-   
+
    Der "Transcode" Pfad wird gesetzt auf: C:\Jellyfin\Data\transcodes
-   
+
    Sollten andere Pfade verwendet worden sein, können dies in der Jellyfin Web Oberfläche wieder angepasst werden.
 
 9. Den Media- oder Web Client öffnen und überprüfen ob noch alles wie gewünscht funktioniert.
@@ -332,8 +312,6 @@ Wenn bereits der Jellyfin Server installiert wurde, kann er in wenigen Schritten
 11. Damit ist die Migration abgeschlossen. 
 
 Sollten Probleme mit dem Zugriff der Bibliotheken auf Ihre Medien Verzeichnisse (NAS) auftreten, überprüfe noch einmal die Berechtigungen, des Dienst Kontos.
-
-
 
 ## Sprachen
 
@@ -399,11 +377,13 @@ Wichtig für den Download:
 
 Die Icons werden dann ebenfalls automatisch zum enstprechenden Eintrag in den jewiligen Sprach-Auswahlmenüs angezeigt, falls nicht, "Console" oder "Konfigurator" einfach neustarten. 
 
-
+## 
 
 ## Komponenten des Toolkits
 
 Das Toolkit besteht aus den Komponenten "SysTray", "Console", "Updater" und "Konfigurator", im folgenden ein paar Worte dazu.
+
+### 
 
 ### SysTray
 
@@ -435,17 +415,19 @@ hier der Aufbau (von oben nach unten)
 
 Als weiteres Feature verfügt SysTray auch über "Ballootips". Diese erscheinen, wenn der Dienst seinen Status ändert (gestartet, gestoppt, unbekannt) und auch, sofern "auf Updates prüfen" aktiviert ist, wenn eine neue Version verfügbar ist.
 
+### 
+
 ### Console
 
 ![ ](https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-ToolKit/main/images/Console.png)
 
 Die Console dient als eine Art kleines Informationszentrum. Primär zeigt sie das Logfile in Echtzeit und stellt die einzelen Warnstufen in verschiedenen Farben dar, damit wird es übersichtlicher und man hat alles schnell im Blick. Zudem gibt es ein "Statistik" Panel, in diesem werden der Status des Dienstes, der Ressourcenverbrauch und die Größe der jeweiligen Bibliotheken angezeigt. Darüberhinaus lässt sich der Dienst starten und stoppen.
 
-##### Das Menü
+#### Das Menü
 
 1. Console
    
-   Neu Laden - Lädt den Inhalt des Logfiles nochenma neu
+   Neu Laden - Lädt den Inhalt des Logfiles noch einmal neu
    
    Web Client - öffnet den WebClient im Browser
    
@@ -471,7 +453,7 @@ Die Console dient als eine Art kleines Informationszentrum. Primär zeigt sie da
    
    Über - Hier wird die Version des Toolkit und der Jellyfin installation angezeigt
 
-##### Der Statistik Button
+#### Der Statistik Button
 
 Wird dieser aktiviert, öffnet sich ein Panel mit Informationen, rund um den Dienst und die Bibliotheken.
 
@@ -487,11 +469,29 @@ Data Verzeichnis - Größe des Data Verzeichnises
 
 **Bibliothek**
 
-Hier werden die einzelnen Bibliotheken und deren Größe angezeigt. Damit das richtig funktioniert, muss der Benutzer, welcher die Konsole gestartet hat, auch über Leseberechtigungen auf den Median Verzeichnisen besitzen.
+Hier werden die einzelnen Bibliotheken und deren Größe angezeigt. Damit das richtig funktioniert, muss der Benutzer, welcher die Konsole gestartet hat, auch über Leseberechtigungen auf den Medien Verzeichnisen besitzen.
 
-
+### 
 
 ### Update
+
+![ ](https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-ToolKit/main/images/Updater.png)
+
+Wie der Name schon verrät, kann mittels des Updater der Jellyfin Media Server aktualisiert werden.
+
+Beim Start wird nach einer neuen Version gesucht, wird diese gefunden, erfolgt ein entsprechender Hinweis. Alternativ kann im Konfigurator die automatische Suche nach Updates aktviert werden, damit erscheint der Hinweis bei einer neuen Version in allen Komponenten des ToolKits.
+
+Ist einen neue Version vorhanden, reicht ein klick auf den "Installieren"-Button.
+
+Während der Installation wird ein Backup des Server Verzeichnisses angelegt, falls etwas schief gehen sollte.
+
+*Noch ein Hinweis: Die Neue Server-Version wird aus der originalen Jellyfin Quelle bezogen (so wie oben bei der Installation bzw. Migration).*
+
+
+
+### Konfigurator
+
+![ ](https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-ToolKit/main/images/Configurator.png)
 
 
 
@@ -515,13 +515,9 @@ An dieser Stelle gehe ich etwas genauer auf die einzelnen Komponenten ein
 
 ![](https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-SysTray/main/Images/SysTray_balloon.png)
 
-
-
 ### Service Configuration
 
 ![](https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-SysTray/main/Images/Config.png)
-
-
 
 ### Console
 
