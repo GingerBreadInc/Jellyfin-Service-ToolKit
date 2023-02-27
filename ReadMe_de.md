@@ -539,36 +539,28 @@ Zudem kannst du hier auch eine Bereinigung von Sammlungen vornehmen. Das Ist zum
 
 ## Screenshots
 
-<img src="https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-SysTray/main/Images/Overview.png" title="" alt="" data-align="center">
+Hier findest du noch ein paar weitere Screenshots.
 
-## Komponenten
+#### SysTray
 
-An dieser Stelle gehe ich etwas genauer auf die einzelnen Komponenten ein
+![ ](https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-ToolKit/main/images/SysTrayMenu.png)
 
-### SysTray Icon with Menu and Balloon Tips
+#### SysTray BalloonTips
 
-##### SysTray Icon with Menu
+![ ](https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-ToolKit/main/images/SysTrayBalloonTips.png)
 
-![](https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-SysTray/main/Images/SysTray.png)
+#### Konsole
 
-##### 
+![ ](https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-ToolKit/main/images/Console.png)
 
-##### Balloon Tips
+#### Updater
 
-![](https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-SysTray/main/Images/SysTray_balloon.png)
+<img src="https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-ToolKit/main/images/UpdateAvailableYes.png" title="" alt=" " data-align="inline">
 
-### Service Configuration
+![ ](https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-ToolKit/main/images/Updater.png)
 
-![](https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-SysTray/main/Images/Config.png)
+![ ](https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-ToolKit/main/images/UpdateAvailableNo.png)
 
-### Console
+#### Konfigurator
 
-![](https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-SysTray/main/Images/Console.png)
-
-### Header 3
-
-#### Header 4
-
-##### Header 5
-
-###### Header 6
+![ ](https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-ToolKit/main/images/Configurator.png)
