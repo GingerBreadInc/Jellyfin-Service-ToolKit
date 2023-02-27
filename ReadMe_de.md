@@ -115,7 +115,7 @@ Für Heimanwender ist ein lokaler Windows Benutzer allerdings die einzige Mögli
 
 3. Im Windows einen Benutzer anlegen, der den selben Benutzernamen und das selbe Passwort hat.
    
-   *Hier ist wichtig zu erwähnen, das dieser Benutzer ***nicht*** in die Gruppe "Lokale Administratoren" oder eine andere Gruppe aufgenommen werden muss, um die richtigen einzelnen Berechtigungen kümmert sich auch hier der "Konfigurator".* 
+   *Hier ist wichtig zu erwähnen, das dieser Benutzer ***nicht*** in die Gruppe "Lokale Administratoren" oder eine andere Gruppe aufgenommen werden muss, um die richtigen einzelnen lokalen Berechtigungen kümmert sich auch hier der "Konfigurator".* 
 
 4. Dieser Benutzer wird dann im "Konfigurator" angegeben.
 
@@ -423,7 +423,7 @@ Als weiteres Feature verfügt SysTray auch über "Ballootips". Diese erscheinen,
 
 ![ ](https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-ToolKit/main/images/Console.png)
 
-Die Console dient als eine Art kleines Informationszentrum. Primär zeigt sie das Logfile in Echtzeit und stellt die einzelen Warnstufen in verschiedenen Farben dar, damit wird es übersichtlicher und man hat alles schnell im Blick. Zudem gibt es ein "Statistik" Panel, in diesem werden der Status des Dienstes, der Ressourcenverbrauch und die Größe der jeweiligen Bibliotheken angezeigt. Darüberhinaus lässt sich der Dienst starten und stoppen.
+Die Console dient als eine Art kleines Informationszentrum. Primär zeigt sie das Logfile in Echtzeit und stellt die einzelen Warnstufen in verschiedenen Farben dar, damit wird es übersichtlicher und man hat alles schnell im Blick. Zudem gibt es ein "Statistik" Panel, in diesem werden der Status des Dienstes, der Ressourcenverbrauch und die Größe der jeweiligen Bibliotheken angezeigt. Darüberhinaus lässt sich der Dienst, über das Menü, starten und stoppen.
 
 #### Das Menü
 
@@ -449,7 +449,7 @@ Die Console dient als eine Art kleines Informationszentrum. Primär zeigt sie da
    
    Dienst Stoppen - Stoppt den Dienst, sofern installiert und nicht gestoppt
 
-4. Sprache - Hier kann die Sprache direkt gewechselt werden und wirkt sich auf alle Komponenten des Toolkit sofort aus
+4. Sprache - Hier kann die Sprache direkt gewechselt werden und wirkt sich sofort auf alle Komponenten des Toolkit aus.
 
 5. Info
    
@@ -492,6 +492,48 @@ Während der Installation wird ein Backup des Server Verzeichnisses angelegt, fa
 ## Konfigurator
 
 ![ ](https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-ToolKit/main/images/Configurator.png)
+
+Der Konfigurator war ursprünglich für die Einrichtung des Jellyfin-Dienstes gedacht, aber kann nun doch ein wenig mehr.
+
+#### Sprache
+
+Wie zu erwarten, ändert man hier die Sprache des Toolkits. Die Änderung wird sofort in allen Komponenten wirksam.
+
+#### Allgemein
+
+Hier müssen die Pfade für das Server, das Data und optional das Client Verzeichnis angegeben werden.
+
+Der Server und der Data Pfad sind ausschlaggebend für den Dienst, aus diesem Grund sind sie Pflichtfelder.
+
+Der Client Pfad ist optional. Ist der Jellyfin Media Client installiert und wird dessen Porgram-Verzeichnis angegeben, erscheint in der Menüleiste, der Konsole, ein Button mit dem der Client direkt gestartet werden kann. Zudem ändert sich das Verhalten des ersten Menüpunkts des SysTray, statt beim Klick darauf den WebClient zu öffen, öffnet sich nun der Media Client.
+
+#### Dienst
+
+In diesem Breich wird nun der Dienst konfiguriert.
+
+Hier steht zur Auswahl, ob der Dienst im Kontext des lokalen System Kontos oder mithilfe einen bestimmten Benutzers betrieben werden soll.
+
+Wenn man sich für einen bestimmten Benutzer entscheidet, kann hier sowohl ein lokaler, als auch ein ActiveDirectory Benutzer verwendet werden. Für einen lokalen benutzer reicht die Angabe des Benutzernamens, für einen ActiveDirectory Benutzer muss der Syntax lauten: "Domäne\Benutzername".
+
+Anschließend muss der Benutzer mittels "Account prüfen" überprüft werden, bevor er für den Dienst verwendet werden kann. Es wird ein Validierung der Benutzers/Passwort Kombination gegen die lokale bzw. die ActiveDirectory Benutzerverwaltung durchgefürt.
+
+Desweiteren kann der Dienst an dieser Stelle Installiert/Entfernt/Gestartet/Gestoppt werden.
+
+*Ein Hinweis: soll der Dienst wieder entfernt werden, muss er zuvor gestoppt werden, erst dann wird der "Entfernen"-Button aktiviert.*
+
+#### Systray
+
+An dieser Stell kannst du bestimmen, ob das SysTray Icon mit der Windows-anmeldung gestartet werden soll oder nicht.
+
+
+
+#### Jellyfin
+
+Hier hast du die Möglichkeit, automatisch nach Updates suchen zu lassen. Das betrifft allerdings nur den Jellyfin Server und nicht das Toolkit.
+
+Zudem kannst du hier auch eine Bereinigung von Sammlungen vornehmen. Das Ist zum Beispiel nötig, wenn Mediendateien verschoben oder umbenannt worden sind, aber einer oder mehrer Sammlungen zugeordnet waren. Dies erscheint dann ebenfalls als Warnung in der Logdatei. Dabei werden die verwaisten Einträge aus den Samlungen entfernt.
+
+*Aber vorsicht, aus der Konfiguration, der jewiligen Sammlung, werden auch alle Pfade entfernt, auf die der Benutzer, unter dem der Konfigurator gerade läuft, keinen Zugriff hat.*
 
 
 
