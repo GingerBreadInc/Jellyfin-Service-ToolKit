@@ -407,6 +407,8 @@ Das Toolkit besteht aus den Komponenten "SysTray", "Console", "Updater" und "Kon
 
 ### SysTray
 
+![ ](https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-ToolKit/main/images/SysTrayMenu.png)
+
 Die Komponente die alles ins Rollen brachte.
 
 Wie der Name schon sagt, lässt sich der Dienst damit über den SysTray von Windows steuern, aber das Icon kann auch ein klein wenig mehr.
@@ -434,6 +436,8 @@ hier der Aufbau (von oben nach unten)
 Als weiteres Feature verfügt SysTray auch über "Ballootips". Diese erscheinen, wenn der Dienst seinen Status ändert (gestartet, gestoppt, unbekannt) und auch, sofern "auf Updates prüfen" aktiviert ist, wenn eine neue Version verfügbar ist.
 
 ### Console
+
+![ ](https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-ToolKit/main/images/Console.png)
 
 Die Console dient als eine Art kleines Informationszentrum. Primär zeigt sie das Logfile in Echtzeit und stellt die einzelen Warnstufen in verschiedenen Farben dar, damit wird es übersichtlicher und man hat alles schnell im Blick. Zudem gibt es ein "Statistik" Panel, in diesem werden der Status des Dienstes, der Ressourcenverbrauch und die Größe der jeweiligen Bibliotheken angezeigt. Darüberhinaus lässt sich der Dienst starten und stoppen.
 
@@ -469,9 +473,9 @@ Die Console dient als eine Art kleines Informationszentrum. Primär zeigt sie da
 
 ##### Der Statistik Button
 
-Wir dieser aktiviert, öffnet sich ein Panel mit Informationen, rund um den Dienst und die Bibliotheken.
+Wird dieser aktiviert, öffnet sich ein Panel mit Informationen, rund um den Dienst und die Bibliotheken.
 
-Service
+**Service**
 
 Status - Status des Dienstes
 
@@ -481,9 +485,15 @@ RAM Nutzung - RAM Verbrauch des Dienstes
 
 Data Verzeichnis - Größe des Data Verzeichnises
 
-Bibliothek
+**Bibliothek**
 
 Hier werden die einzelnen Bibliotheken und deren Größe angezeigt. Damit das richtig funktioniert, muss der Benutzer, welcher die Konsole gestartet hat, auch über Leseberechtigungen auf den Median Verzeichnisen besitzen.
+
+
+
+### Update
+
+
 
 ## Screenshot
 
