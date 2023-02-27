@@ -541,19 +541,19 @@ Zudem kannst du hier auch eine Bereinigung von Sammlungen vornehmen. Das Ist zum
 
 Hier findest du noch ein paar weitere Screenshots.
 
-#### SysTray
+### SysTray
 
 ![ ](https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-ToolKit/main/images/SysTrayMenu.png)
 
-#### SysTray BalloonTips
+### SysTray BalloonTips
 
 ![ ](https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-ToolKit/main/images/SysTrayBalloonTips.png)
 
-#### Konsole
+### Konsole
 
 ![ ](https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-ToolKit/main/images/Console.png)
 
-#### Updater
+### Updater
 
 <img src="https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-ToolKit/main/images/UpdateAvailableYes.png" title="" alt=" " data-align="inline">
 
@@ -561,6 +561,6 @@ Hier findest du noch ein paar weitere Screenshots.
 
 ![ ](https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-ToolKit/main/images/UpdateAvailableNo.png)
 
-#### Konfigurator
+### Konfigurator
 
 ![ ](https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-ToolKit/main/images/Configurator.png)
