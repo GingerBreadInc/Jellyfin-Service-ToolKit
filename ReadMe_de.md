@@ -24,11 +24,13 @@ So genug der vielen Worte, nun zum Eigentlichen. ;-)
 
 [Installation Jellyfin Server](#Installation-Jellyfin-Server)
 
+[Migration eines bestehenden Jellyfin Servers](#Migration-eines-bestehenden-Jellyfin-Servers)
+
 [Update Jellyfin Server](#Update-Jellyfin-Server)
 
 [Sprachen](#Sprachen)
 
-[Komponenten des Toolkit](#Komponenten-des-Toolkit)
+[Komponenten des Toolkits](#Komponenten-des-Toolkits)
 
 [Screenshots](#Screenshots)
 
@@ -493,7 +495,7 @@ Während der Installation wird ein Backup des Server Verzeichnisses angelegt, fa
 
 
 
-## Screenshot
+## Screenshots
 
 <img src="https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-SysTray/main/Images/Overview.png" title="" alt="" data-align="center">
 
