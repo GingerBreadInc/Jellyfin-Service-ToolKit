@@ -20,7 +20,7 @@ So genug der vielen Worte, nun zum Eigentlichen. ;-)
 
 ## Inhalt
 
-[Vorrausetzung Toolkit](#Vorrausetzung-Toolkit)
+[Vorrausetzung Toolkit](#Vorrausetzungen-Toolkit)
 
 [Installation Jellyfin Server](#Installation-Jellyfin-Server)
 
@@ -32,9 +32,17 @@ So genug der vielen Worte, nun zum Eigentlichen. ;-)
 
 [Komponenten des Toolkits](#Komponenten-des-Toolkits)
 
+- [SysTray](#SysTray)
+
+- [Konsole](#Konsole)
+
+- [Updater](#Updater)
+
+- [Konfigurator](#Konfigurator)
+
 [Screenshots](#Screenshots)
 
-## Vorrausetzung Toolkit
+## Vorrausetzungen - Toolkit
 
 Um das Toolkit nutzen zu können, gibt es keine speziellen Vorraussetzungen, außer die folgenden:
 
@@ -309,9 +317,11 @@ Wenn bereits der Jellyfin Server installiert wurde, kann er in wenigen Schritten
 
 9. Den Media- oder Web Client öffnen und überprüfen ob noch alles wie gewünscht funktioniert.
 
-10. Sollte alles wie gehabt funktionieren, kann nun der ursprüngliche Jellyfin Server Deinstalliert werden.
+10. Im Verzeichnis "ToolKit" nun die "Jellyfin.Console.exe" starten, hier kannst du eventuell auftretende Fehler gleich sehen.
 
-11. Damit ist die Migration abgeschlossen. 
+11. Sollte alles wie gehabt funktionieren, kann nun der ursprüngliche Jellyfin Server Deinstalliert werden.
+
+12. Damit ist die Migration abgeschlossen. 
 
 Sollten Probleme mit dem Zugriff der Bibliotheken auf Ihre Medien Verzeichnisse (NAS) auftreten, überprüfe noch einmal die Berechtigungen, des Dienst Kontos.
 
@@ -339,7 +349,7 @@ Und das geht so:
    $Language = "de-DE"
    ```
 
-4. Noch eine Besonderheit ist die Angabe der "Performance Counter Namen" für "Prozess" und "Prozessorzeit", diese sind von der Betriebssystem-Sprache abhängig (Warum auch immer sich Microsoft dafür entschieden hat).
+4. Noch eine Besonderheit ist die Angabe der "Performance Counter Namen" für "Prozess" und "Prozessorzeit", diese sind von der Betriebssystem-Sprache abhängig (Warum auch immer sich Microsoft dafür entschieden hat). Diese Enträge sind für das Statsitk-Panel in der Konsole wichtig, darüber wird die CPU Nutzung des Dienstes abgefragt. Sind die Werte nicht korrekt, erscheint nur ein "%" ohne Wert davor.
    
    Hier die Beispiele für Deutsch und Englisch:
    
@@ -419,7 +429,7 @@ Als weiteres Feature verfügt SysTray auch über "Ballootips". Diese erscheinen,
 
   
 
-## Console
+## Konsole
 
 ![ ](https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-ToolKit/main/images/Console.png)
 
@@ -475,7 +485,7 @@ Hier werden die einzelnen Bibliotheken und deren Größe angezeigt. Damit das ri
 
   
 
-## Update
+## Updater
 
 ![ ](https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-ToolKit/main/images/Updater.png)
 
@@ -531,7 +541,7 @@ An dieser Stell kannst du bestimmen, ob das SysTray Icon mit der Windows-anmeldu
 
 Hier hast du die Möglichkeit, automatisch nach Updates suchen zu lassen. Das betrifft allerdings nur den Jellyfin Server und nicht das Toolkit.
 
-Zudem kannst du hier auch eine Bereinigung von Sammlungen vornehmen. Das Ist zum Beispiel nötig, wenn Mediendateien verschoben oder umbenannt worden sind, aber einer oder mehrer Sammlungen zugeordnet waren. Dies erscheint dann ebenfalls als Warnung in der Logdatei. Dabei werden die verwaisten Einträge aus den Samlungen entfernt.
+Zudem kannst du hier auch eine Bereinigung von Sammlungen vornehmen. Dabei werden die verwaisten Einträge aus den Samlungen entfernt. Das Ist zum Beispiel nötig, wenn Mediendateien verschoben oder umbenannt worden sind, aber einer oder mehrer Sammlungen zugeordnet waren. Dies erscheint dann ebenfalls als Warnung in der Logdatei.
 
 *Aber vorsicht, aus der Konfiguration, der jewiligen Sammlung, werden auch alle Pfade entfernt, auf die der Benutzer, unter dem der Konfigurator gerade läuft, keinen Zugriff hat.*
 
