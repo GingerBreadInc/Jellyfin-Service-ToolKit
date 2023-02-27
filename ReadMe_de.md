@@ -385,7 +385,7 @@ Das Toolkit besteht aus den Komponenten "SysTray", "Console", "Updater" und "Kon
 
  
 
-### SysTray
+## SysTray
 
 ![ ](https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-ToolKit/main/images/SysTrayMenu.png)
 
@@ -417,7 +417,7 @@ Als weiteres Feature verfügt SysTray auch über "Ballootips". Diese erscheinen,
 
   
 
-### Console
+## Console
 
 ![ ](https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-ToolKit/main/images/Console.png)
 
@@ -473,7 +473,7 @@ Hier werden die einzelnen Bibliotheken und deren Größe angezeigt. Damit das ri
 
   
 
-### Update
+## Update
 
 ![ ](https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-ToolKit/main/images/Updater.png)
 
@@ -487,9 +487,7 @@ Während der Installation wird ein Backup des Server Verzeichnisses angelegt, fa
 
 *Noch ein Hinweis: Die Neue Server-Version wird aus der originalen Jellyfin Quelle bezogen (so wie oben bei der Installation bzw. Migration).*
 
- 
-
-### Konfigurator
+## Konfigurator
 
 ![ ](https://raw.githubusercontent.com/GingerBreadInc/Jellyfin-Service-ToolKit/main/images/Configurator.png)
 
