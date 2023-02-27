@@ -20,7 +20,7 @@ So genug der vielen Worte, nun zum Eigentlichen. ;-)
 
 ## Inhalt
 
-[Vorrausetzung Toolkit](#Vorrausetzungen-Toolkit)
+[Vorrausetzungen - Toolkit](#Vorrausetzungen---Toolkit)
 
 [Installation Jellyfin Server](#Installation-Jellyfin-Server)
 
