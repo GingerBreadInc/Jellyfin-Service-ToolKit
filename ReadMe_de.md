@@ -20,17 +20,17 @@ So genug der vielen Worte, nun zum Eigentlichen. ;-)
 
 ## Inhalt
 
-Vorrausetzung Toolkit
+[Vorrausetzung Toolkit](#Vorrausetzung-Toolkit)
 
-Installation Jellyfin Server
+[Installation Jellyfin Server](#Installation-Jellyfin-Server)
 
-Update Jellyfin Server
+[Update Jellyfin Server](#Update-Jellyfin-Server)
 
-Sprachen
+[Sprachen](#Sprachen)
 
-Komponenten des Toolkit
+[Komponenten des Toolkit](#Komponenten-des-Toolkit)
 
-Screenshots
+[Screenshots](#Screenshots)
 
 ## Vorrausetzung Toolkit
 
