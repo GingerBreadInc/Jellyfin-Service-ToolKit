@@ -377,13 +377,13 @@ Wichtig für den Download:
 
 Die Icons werden dann ebenfalls automatisch zum enstprechenden Eintrag in den jewiligen Sprach-Auswahlmenüs angezeigt, falls nicht, "Console" oder "Konfigurator" einfach neustarten. 
 
-## 
+
 
 ## Komponenten des Toolkits
 
 Das Toolkit besteht aus den Komponenten "SysTray", "Console", "Updater" und "Konfigurator", im folgenden ein paar Worte dazu.
 
-### 
+ 
 
 ### SysTray
 
@@ -415,7 +415,7 @@ hier der Aufbau (von oben nach unten)
 
 Als weiteres Feature verfügt SysTray auch über "Ballootips". Diese erscheinen, wenn der Dienst seinen Status ändert (gestartet, gestoppt, unbekannt) und auch, sofern "auf Updates prüfen" aktiviert ist, wenn eine neue Version verfügbar ist.
 
-### 
+  
 
 ### Console
 
@@ -471,7 +471,7 @@ Data Verzeichnis - Größe des Data Verzeichnises
 
 Hier werden die einzelnen Bibliotheken und deren Größe angezeigt. Damit das richtig funktioniert, muss der Benutzer, welcher die Konsole gestartet hat, auch über Leseberechtigungen auf den Medien Verzeichnisen besitzen.
 
-### 
+  
 
 ### Update
 
@@ -487,7 +487,7 @@ Während der Installation wird ein Backup des Server Verzeichnisses angelegt, fa
 
 *Noch ein Hinweis: Die Neue Server-Version wird aus der originalen Jellyfin Quelle bezogen (so wie oben bei der Installation bzw. Migration).*
 
-
+ 
 
 ### Konfigurator
 
