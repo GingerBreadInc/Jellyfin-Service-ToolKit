@@ -137,7 +137,7 @@ Die einfachste Variante den Jellyfin Server zu installieren erkläre ich in den 
 
 1. Download der Jellyfin Server Dateien
    
-   Um das Toolkit vernüftig zu nutzen, empfehle ich das Combined Package, das gibts hier im Jellyfin Repo: [https://repo.jellyfin.org/releases/server/windows/versions/stable/combined](https://repo.jellyfin.org/?path=/server/windows/latest-stable/amd64)](https://repo.jellyfin.org/?path=/server/windows/latest-stable/amd64)
+   Um das Toolkit vernüftig zu nutzen, empfehle ich das Combined Package, das gibts hier im Jellyfin Repo: [https://repo.jellyfin.org/?path=/server/windows/latest-stable/amd64)](https://repo.jellyfin.org/?path=/server/windows/latest-stable/amd64)
 
 2. Anlegen eines Verzeichnisses, in dem am Ende, das ***Server***, das ***Data*** und das ***Toolkit*** Verzeichnis liegen
    
