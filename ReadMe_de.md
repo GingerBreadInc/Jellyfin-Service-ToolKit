@@ -58,7 +58,9 @@ Windows 11 (22H2),
 
 Windows Server 2019,
 
-Windows Server 2022
+Windows Server 2022,
+
+Windows Server 2025
 
 sollte aber unter jedem Windows (x64) mit PowerShell 5.1 laufen.
 
@@ -137,7 +139,7 @@ Die einfachste Variante den Jellyfin Server zu installieren erkläre ich in den 
 
 1. Download der Jellyfin Server Dateien
    
-   Um das Toolkit vernüftig zu nutzen, empfehle ich das Combined Package, das gibts hier im Jellyfin Repo: [https://repo.jellyfin.org/?path=/server/windows/latest-stable/amd64)](https://repo.jellyfin.org/?path=/server/windows/latest-stable/amd64)
+   Um das Toolkit vernüftig zu nutzen, empfehle ich das Portable Package, das gibts hier im Jellyfin Repo: [https://repo.jellyfin.org/?path=/server/windows/latest-stable/amd64)](https://repo.jellyfin.org/?path=/server/windows/latest-stable/amd64)
 
 2. Anlegen eines Verzeichnisses, in dem am Ende, das ***Server***, das ***Data*** und das ***Toolkit*** Verzeichnis liegen
    
@@ -263,8 +265,7 @@ Wenn bereits der Jellyfin Server installiert wurde, kann er in wenigen Schritten
 
 5. Download der Jellyfin Server Dateien
    
-   Um das Toolkit vernüftig zu nutzen, empfehle ich das Combined Package, das gibts hier im Jellyfin Repo: [https://repo.jellyfin.org/releases/server/windows/versions/stable/combined](https://repo.jellyfin.org/releases/server/windows/versions/stable/combined/)
-
+   Um das Toolkit vernüftig zu nutzen, empfehle ich das Portable Package, das gibts hier im Jellyfin Repo: [https://repo.jellyfin.org/?path=/server/windows/latest-stable/amd64)](https://repo.jellyfin.org/?path=/server/windows/latest-stable/amd64)
 6. Den Inhalt (ein Verzsichnis), des heruntergeladenen Archivs, in das gerade erstellte Verzeichnis entpacken und in ***Server*** umbenennen.
 
 7. Das Toolkit von hier aus den Releases herunterladen und wieder den Inhalt in unser neu erstelltes Verzeichnis entpacken.
